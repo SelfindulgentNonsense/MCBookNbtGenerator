@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>📖Book Loottable Generator 🔥🔥🔥</title>
+
+        <style>
+            fieldset
+            {
+                width: fit-content;
+                margin: 10px;
+            }
+            a {
+                color:antiquewhite;
+                font-style:italic;
+            }
+            body {
+                background-color:rgb(40, 0, 87);
+                color:aliceblue;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Created by Selfindulgent Nonsense -> <a href="https://github.com/SelfindulgentNonsense" target="_blank">GitHub</a></h1>
+        <p>Program will take in normally formatted text, author and title and return the signed book loottable. Page wrapping automatic.</p>
+        <p>Program will completely break down if there isnt a space every now and then. In general, this hasn't been tested on all that many edge cases</p>
+        <p>Your IDE will probably mark the new lines etc weirdly but trust me it works</p>
+        <p>Not currently designed to handle [ ] { } \ ' " and anything in that department (If you want to do dialogue, use ’ instead.). working on that, for now, please just use text. the program will remove those characters though.</p>
+        
+        <div style="display: flex; justify-content: center;">
+            <fieldset>
+                <legend>Book Info</legend>
+                <input type="text" id="title" placeholder="Title" maxlength="32">
+                <input type="text" id="author" placeholder="Author">
+                <br>
+                <textarea id="content" rows="20" cols="46" placeholder="Book content"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Spawn Conditions</legend>
+                <select id="generationSelect">
+                    <option value="0">Original</option>
+                    <option value="1">Copy of Original</option>
+                    <option value="2">Copy of Copy</option>
+                    <option value="3">Tattered</option>
+                </select>
+                <br>
+                <select id="pooltype">
+                    <option value="chest" selected>Chest</option>
+                    <option value="block">Block</option>
+                    <option value="fishing">Fishing</option>
+                    <option value="entity">Entity</option>
+                    <option value="barter">Barter</option>
+                    <option value="command">Command</option>
+                    <option value="selector">Selector</option>
+                    <option value="gift">Gift</option>
+                    <option value="advancement_reward">Advancement Reward</option>
+                    <option value="advancement_entity">Advancement Entity</option>
+                </select>
+            </fieldset>
+        </div>
+        <br>
+        <button onclick="generateLoottable()">Copy Result</button>
+
+        <br><br><br><br><br>
+
+        <h3>Useful Links</h3>
+        <a href="https://misode.github.io/loot-table/">General Tool for Loot Tables</a><br>
+        <a href="https://gaming.stackexchange.com/questions/248001/how-can-i-see-the-entity-data-of-an-existing-item">How to show nbt data of item in mc chat, helpful for debugging</a><br>
+        <a href="https://minecraft.tools/en/book.php">Book Command Creator that allows for colors etc.</a>
+
+        <script src="script.js"></script>
+    </body>
+</html>
