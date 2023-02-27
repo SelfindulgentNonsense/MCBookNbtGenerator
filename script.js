@@ -58,11 +58,22 @@ function formatBook()
 
 function generateLoottable()
 {
+    // GENERAL
+    var tabletype = document.getElementById('pooltype').value;
+
+    // BOOK INFO
     var title = document.getElementById('title').value;
     var author = document.getElementById('author').value;
-    var content = document.getElementById('content').value;
     var generation = document.getElementById('generationSelect').value;
-    var tabletype = document.getElementById('pooltype').value;
+    var content = document.getElementById('content').value;
+
+    // LORE
+    var lore = document.getElementById('lore').value;
+    var lorecolor = document.getElementById('lorecolor').value;
+    var lorebold = document.getElementById('lorebold').checked;
+    var loreitalic = document.getElementById('loreitalic').checked;
+    var loreunderlined = document.getElementById('loreunderlined').checked;
+    var lorestrikethrough = document.getElementById('lorestrikethrough').checked;
 
     let lootTable =
     `{
@@ -78,6 +89,20 @@ function generateLoottable()
                             {
                                 "function": "minecraft:set_nbt",
                                 "tag": "{pages:['{\\"text\\":\\"${formatBook(content)}\\"}'],title:\\"${title}\\",author:\\"${author}\\",resolved:\\"1b\\",generation:${generation}}"
+                            },
+                            {
+                                "function": "minecraft:set_lore",
+                                "entity": "this",
+                                "lore": [
+                                    {
+                                        "text": "${lore}",
+                                        "color": "${lorecolor}",
+                                        "bold": ${lorebold},
+                                        "italic": ${loreitalic},
+                                        "underlined": ${loreunderlined},
+                                        "strikethrough": ${lorestrikethrough}
+                                    }
+                                ]
                             }
                         ]
                     }

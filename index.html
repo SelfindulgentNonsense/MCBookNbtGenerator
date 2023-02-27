@@ -29,21 +29,8 @@
         
         <div style="display: flex; justify-content: center;">
             <fieldset>
-                <legend>Book Info</legend>
-                <input type="text" id="title" placeholder="Title" maxlength="32">
-                <input type="text" id="author" placeholder="Author">
-                <br>
-                <textarea id="content" rows="20" cols="46" placeholder="Book content"></textarea>
-            </fieldset>
-            <fieldset>
-                <legend>Spawn Conditions</legend>
-                <select id="generationSelect">
-                    <option value="0">Original</option>
-                    <option value="1">Copy of Original</option>
-                    <option value="2">Copy of Copy</option>
-                    <option value="3">Tattered</option>
-                </select>
-                <br>
+                <legend>General</legend>
+                <label for="pooltype">Type of Loottable Pool</label><br>
                 <select id="pooltype">
                     <option value="chest" selected>Chest</option>
                     <option value="block">Block</option>
@@ -56,6 +43,42 @@
                     <option value="advancement_reward">Advancement Reward</option>
                     <option value="advancement_entity">Advancement Entity</option>
                 </select>
+            </fieldset>
+            <fieldset>
+                <legend>Book Info</legend>
+                <input type="text" id="title" placeholder="Title" maxlength="32"><br>
+                <input type="text" id="author" placeholder="Author"><br>
+                <select id="generationSelect">
+                    <option value="0">Original</option>
+                    <option value="1">Copy of Original</option>
+                    <option value="2">Copy of Copy</option>
+                    <option value="3">Tattered</option>
+                </select>
+                <br>
+                <textarea id="content" rows="20" cols="46" placeholder="Book content"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Lore</legend>
+                <input type="text" id="lore" placeholder="Lore"><br>
+                <select id="lorecolor">
+                    <option value="black" style="color: black;">Black</option>
+                    <option value="white" style="color: white; background-color: gray;" selected>White</option>
+                    <option value="red" style="color: red;">Red</option>
+                    <option value="blue" style="color: blue">Blue</option>
+                    <option value="yellow" style="color: yellow; background-color: gray;">Yellow</option>
+                    <option value="orange" style="color: orange">Orange</option>
+                    <option value="green" style="color: greenyellow; background-color: gray;">Green</option>
+                    <option value="purple" style="color: purple">Purple</option>
+                    <option value="violet" style="color: violet">Violet</option>
+                </select>
+                <br>
+                <input type="checkbox" id="lorebold"><label for="lorebold"><strong>Bold</strong></label>
+                <br>
+                <input type="checkbox" id="loreitalic" checked><label for="loreitalic"><em>Italic</em></label>
+                <br>
+                <input type="checkbox" id="loreunderlined"><label for="loreunderlined"><u>Underlined</u></label>
+                <br>
+                <input type="checkbox" id="lorestrikethrough"><label for="lorestrikethrough"><strike>Strikethrough</strike></label>
             </fieldset>
         </div>
         <br>
