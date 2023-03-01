@@ -56,6 +56,36 @@ function formatBook()
     return formattedBook;
 }
 
+function formatLore(lore, lorecolor, lorebold, loreitalic, loreunderlined, lorestrikethrough)
+{
+    let formattedLore = '';
+    let characters = 0;
+
+    for (let i = 0; i < lore.length; i++)
+    {
+        characters++;
+        if (characters > 50 && lore.charAt(i) === ' ')
+        {
+            formattedLore += `",
+            "color": "${lorecolor}",
+            "bold": ${lorebold},
+            "italic": ${loreitalic},
+            "underlined": ${loreunderlined},
+            "strikethrough": ${lorestrikethrough}
+            },
+            {
+                "text": "`
+            characters = 0;
+        }
+        else
+        {
+            formattedLore += lore.charAt(i);
+        }
+    }
+
+    return formattedLore;
+}
+
 function generateLoottable()
 {
     // GENERAL
@@ -95,7 +125,7 @@ function generateLoottable()
                                 "entity": "this",
                                 "lore": [
                                     {
-                                        "text": "${lore}",
+                                        "text": "${formatLore(lore, lorecolor, lorebold, loreitalic, loreunderlined, lorestrikethrough)}",
                                         "color": "${lorecolor}",
                                         "bold": ${lorebold},
                                         "italic": ${loreitalic},
